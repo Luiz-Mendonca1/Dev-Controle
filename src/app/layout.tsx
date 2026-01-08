@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dev controle - sitema de gerenciamento",
+  title: "Dev controle - sistema de gerenciamento",
   description: "Sistema de gerenciamento de atendimentos e clientes.",
 };
 
@@ -24,12 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Header />
-        {children}
+    <html lang="pt-br" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
