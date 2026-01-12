@@ -1,4 +1,4 @@
-import atendimento from '../../public/home.png';
+import atendimento from '../../public/atendimento.png';
 
 export default function Home() {
   return (
