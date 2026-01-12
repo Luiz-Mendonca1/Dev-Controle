@@ -6,10 +6,11 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  // REMOVA ou COMENTE a linha abaixo para usar o padrão
+  // output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
-
