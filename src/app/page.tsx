@@ -1,4 +1,4 @@
-import atendimento from '../../public/home.png';
+import atendimento from '../../public/atendimento.png';
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
           <div className="absolute -inset-1 bg-linear-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 dark:opacity-30 transition-opacity"></div>
           
           <img 
-            src='atendimento.png' 
+            src={atendimento.src} 
             alt="Ilustração de atendimento ao cliente" 
             className="relative w-full h-auto rounded-2xl shadow-xl border border-gray-100 dark:border-slate-800 transition-all"
           />

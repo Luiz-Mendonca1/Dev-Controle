@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client/extension";
 
 let prisma: PrismaClient;
 
-if (process.env.NODE_ENV === "production") {    
+if (process.env.NODE_ENV === "production") {
     prisma = new PrismaClient();
 } else {
     let globalWithPrisma = global as typeof globalThis & {
@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === "production") {
     };
     if (!globalWithPrisma.prisma) {
         globalWithPrisma.prisma = new PrismaClient();
-    }   
+    }
 
     prisma = globalWithPrisma.prisma;
 }
